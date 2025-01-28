@@ -8,6 +8,8 @@ class User(AbstractUser):
     email = models.EmailField(unique=True, max_length=254, null=True)
     bio = models.TextField(null=True, blank=True)
     
+    event_participant = models.BooleanField(default=True, null=True)
+    
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
     
