@@ -5,5 +5,6 @@ from .models import User, Event, Submission
 
 def home_page(request):
     users = User.objects.filter(event_participant=True)
-    context = {'users':users}
+    events = Event.objects.all()
+    context = {'users':users, 'events':events}
     return render(request, 'home.html', context)
